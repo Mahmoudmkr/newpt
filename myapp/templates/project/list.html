@@ -1,0 +1,19 @@
+{% load i18n %}
+{% block content %}
+
+<h1>{% trans 'My project '%}</h1>
+<ul>
+    {% for project in object_list %}
+    {% csrf_token %}
+    <li>{{ project.title }}  <a href="{% url 'update' project.id %}">edit</a></li>
+    {% empty %}
+    {% trans ' this is no project for now try agian later' %}
+    {% endfor %}
+</ul>
+
+
+
+
+
+
+{% endblock %}
