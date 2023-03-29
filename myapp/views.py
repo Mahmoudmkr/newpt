@@ -21,4 +21,4 @@ class ProjectUpdateView(UpdateView):
     template_name = 'project/update.html'
 
     def get_success_url(self):
-        return reverse ('list')
+        return reverse ('list', args=[self.object.id])
