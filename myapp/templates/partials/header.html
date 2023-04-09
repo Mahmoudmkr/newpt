@@ -18,7 +18,7 @@
               {{user.username}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
               <li><a class="dropdown-item" href="{% url 'logout' %}">logout</a></li>
               <li><hr class="dropdown-divider"></li>
             </ul>
@@ -41,7 +41,8 @@
          <li class="d-flex">
            <a class="btn btn-outline-light" href="{% url 'login' %}">
               {% trans 'login' %}
-            </a>
+           </a>
+           <a class="btn btn-outline-success" href="{% url 'register' %}">{% trans 'register' %}</a>
          </li>
       {% endif %}
     </div>
