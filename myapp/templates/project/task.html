@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <ul class="list-group">
-    {% for task in product.task_set.all %}
+    {% for task in project.task_set.all %}
     <li class="list-group-item d-flex">
         <form method="post" action="{% url 'task_update' task.id %}" class="my-auto me-2">
             {% csrf_token %}
@@ -29,7 +29,7 @@
         <form method="post" action="{% url 'task_create' %}" class="d-flex">
             {% csrf_token %}
            <div class="input-group">
-                <input type="hidden" value="{{ product.id }}" name="product">
+                <input type="hidden" value="{{ project.id }}" name="project">
                 <input type="text" placeholder="{% trans 'new task' %}" name="description" class="form-control">
                 <input type="submit" class="btn-outline-dark" value="{% trans 'Add' %}">
            </div>
